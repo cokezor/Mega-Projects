@@ -1,5 +1,5 @@
-def sieve1(max):
-    numbers = range(2, max+1)
+def sieve1(limit):
+    numbers = range(2, limit+1)
     length = len(numbers)
 
     for index, p in enumerate(numbers):
@@ -10,9 +10,9 @@ def sieve1(max):
 
     return [x for x in numbers if x != 0]
 
-def sieve2(max):
+def sieve2(limit):
     numbers = [0,0]
-    numbers.extend(range(2, max + 1))
+    numbers.extend(range(2, limit + 1))
     length = len(numbers)
 
     for index, p in enumerate(numbers):
@@ -27,9 +27,9 @@ def sieve2(max):
 
     return [x for x in numbers if x != 0]
 
-def sieve3(max):
+def sieve3(limit):
     numbers = [0, 0]
-    numbers.extend(range(2, max + 1))
+    numbers.extend(range(2, limit + 1))
     length = len(numbers)
 
     for index, p in enumerate(numbers):
@@ -47,14 +47,14 @@ def sieve3(max):
 
     return [x for x in numbers if x != 0]
 
-def sieve4(max):
-    a = [True] * max
+def sieve4(limit):
+    a = [True] * limit
     a[0] = a[1] = False
 
     for index, prime in enumerate(a):
         if prime:
             yield index
-            for index in xrange(index * index, max, index):
+            for index in xrange(index * index, limit, index):
                 a[index] = False
 
 """
